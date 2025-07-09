@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
 
 env:
+    ID:production
   NODE_ENV: production
   API_URL: https://api.example.com
   DB_CONNECTION: mongodb://localhost:27017/mydb
@@ -13,6 +14,10 @@ jobs:
  
   build-app:
     runs-on: ubuntu-latest
+
+    env:
+        name: production
+        NODE_ENV: development # This will override the global NODE_ENV for this job
     steps:
      
       
@@ -21,5 +26,8 @@ jobs:
 
       - name: Echo message
         run: echo "Hello, World from first action is $NODE_ENV  and $COX_ENV is COX environment" 
+
+        -name: print secrets
+        run: echo "The secret APPKey is ${{ secrets.PROD_APP_KEY }}"
         
   
