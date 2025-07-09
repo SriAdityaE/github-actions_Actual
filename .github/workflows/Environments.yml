@@ -15,9 +15,10 @@ jobs:
   build-app:
     runs-on: ubuntu-latest
 
-    env:
+    environment: 
         name: production
-        NODE_ENV: development # This will override the global NODE_ENV for this job
+        url : " https://production.example.com"
+        
     steps:
      
       
@@ -25,7 +26,7 @@ jobs:
         run: echo "COX_ENV=production" >> $GITHUB_ENV
 
       - name: Echo message
-        run: echo "Hello, World from first action is $NODE_ENV  and $COX_ENV is COX environment" 
+        run: echo "Hello, World from first action is COX_ENV is COX environment" 
 
       - name: Print secrets
         run: echo "The secret APPKey is ${{ secrets.PROD_APP_KEY }}"
