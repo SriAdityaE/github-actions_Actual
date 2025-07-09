@@ -7,28 +7,30 @@ on:
     branches: ["main"]
 
 jobs:
- build-app:
+  build-app:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-        -name: echo message
-        run: echo "Hello, World  fist action!"
+      
+      - name: Echo message
+        run: echo "Hello, World from first action!"
         
-        build-api:
-          runs-on: windows-latest  
-          steps:
-             
+  build-api:
+    runs-on: windows-latest  
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Echo message
+        run: echo "Hello, World from the second job!"
 
-            - name: Echo message
-              run: echo "Hello, World from the second job!"
-
-              build-db:
-                runs-on: macos-latest
-                needs: build-app
-                steps:
-              
-
-                  - name: Echo message
-                    run: echo "Hello, World from the third job!"
+  build-db:
+    runs-on: macos-latest
+    needs: build-app
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Echo message
+        run: echo "Hello, World from the third job!"
