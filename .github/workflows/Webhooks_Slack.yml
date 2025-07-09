@@ -16,5 +16,5 @@ jobs:
     steps:
       - name: Send Notification to Slack channel
         run: |
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
-     
+curl -X POST -H 'Content-type: application/json' --data '{"text":"Builsuccedded!"}' https://hooks.slack.com/services/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
+
