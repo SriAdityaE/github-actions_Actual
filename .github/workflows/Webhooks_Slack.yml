@@ -1,4 +1,4 @@
-name: Secret WorkFlow
+name: Slack Integration Workflow
 
 on:
   workflow_dispatch:
