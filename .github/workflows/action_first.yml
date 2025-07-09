@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v3
       
       - name: Echo message
-        run: echo "Hello, World from first action! "
+        run: echo "Hello, World from first action! environment is $NODE_ENV"
         
   build-api:
     runs-on: windows-latest  
