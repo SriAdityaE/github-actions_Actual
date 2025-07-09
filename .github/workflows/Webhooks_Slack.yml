@@ -1,0 +1,20 @@
+name: Secret WorkFlow
+
+on:
+  
+  workflow_dispatch:
+
+env:
+  NODE_ENV: production
+  API_URL: https://api.example.com
+  DB_CONNECTION: mongodb://localhost:27017/mydb
+
+jobs:
+ 
+  build-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Notification to Slack channel
+        run: |
+          curl -X POST -H "Content-type: application/json" --data "{\"text\":\"Code pushed Successfully to ain branch deplaoyment completed../B09544RGX7E/YTyXQJslMBxSprGILOCU4jUX\"}" https://hooks.slack.com/services/your/webhook/url
+     
