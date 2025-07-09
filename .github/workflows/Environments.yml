@@ -27,7 +27,7 @@ jobs:
       - name: Echo message
         run: echo "Hello, World from first action is $NODE_ENV  and $COX_ENV is COX environment" 
 
-        -name: print secrets
+      - name: Print secrets
         run: echo "The secret APPKey is ${{ secrets.PROD_APP_KEY }}"
         
   
