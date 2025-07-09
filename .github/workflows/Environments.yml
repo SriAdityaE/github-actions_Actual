@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 env:
-    ID:production
+  ID: production
   NODE_ENV: production
   API_URL: https://api.example.com
   DB_CONNECTION: mongodb://localhost:27017/mydb
